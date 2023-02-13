@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    name: otr_account
+    url: ''
+    username: ''
+    password: ''
+
+parts_management_service:
+  url: http://localhost:30001
+  name: lead-management

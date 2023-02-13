@@ -1,0 +1,14 @@
+spring:
+    cloud:
+        config:
+            discovery:
+                enabled: false
+            enabled: false
+        consul:
+            config:
+                enabled: false
+            enabled: false
+            discovery:
+              enabled: false
+server:
+  port: 30002

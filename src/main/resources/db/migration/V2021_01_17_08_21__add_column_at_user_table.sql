@@ -1,0 +1,1 @@
+ALTER TABLE user ADD phone_number varchar(11) NOT NULL;

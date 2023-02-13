@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    name: otr_account
+    url: jdbc:mysql://localhost:3306/otr_account?useSSL=false
+    username: root
+    password: dev

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="PMD Ruleset"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+    <description>PMD Ruleset</description>
+
+    <rule ref="category/java/design.xml/ExcessiveMethodLength">
+        <properties>
+            <property name="minimum" value="40"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/design.xml/ExcessiveClassLength">
+        <properties>
+            <property name="minimum" value="500"/>
+        </properties>
+    </rule>
+    <rule ref="category/java/errorprone.xml">
+        <exclude name="BeanMembersShouldSerialize"></exclude>
+        <exclude name="DataflowAnomalyAnalysis"></exclude>
+    </rule>
+    <!-- We'll use the entire 'strings' ruleset -->
+    <rule ref="rulesets/java/strings.xml">
+        <exclude name="AvoidDuplicateLiterals"/>
+    </rule>
+
+    <!-- Here's some rules we'll specify one at a time -->
+    <rule ref="rulesets/java/unusedcode.xml"/>
+    <rule ref="rulesets/java/unnecessary.xml"/>
+    <rule ref="rulesets/java/imports.xml">
+        <exclude name="TooManyStaticImports"/>
+    </rule>
+
+    <!-- We want to customize this rule a bit, change the message and raise the priority  -->
+    <rule
+            ref="rulesets/java/empty.xml/EmptyCatchBlock"
+            message="Must handle exceptions">
+        <priority>2</priority>
+    </rule>
+
+    <!-- Now we'll customize a rule's property value -->
+    <rule ref="rulesets/java/codesize.xml/CyclomaticComplexity">
+        <properties>
+            <property name="methodReportLevel" value="7"/>
+        </properties>
+    </rule>
+
+    <rule ref="rulesets/java/braces.xml">
+    </rule>
+</ruleset>

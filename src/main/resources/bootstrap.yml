@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+  application:
+    name: account-management
+  cloud:
+    config:
+      discovery:
+        enabled: false
+      enabled: true
+      fail-fast: true
+      uri: ${CONFIG_SERVER_URL}
+
+server:
+  port: 8090
